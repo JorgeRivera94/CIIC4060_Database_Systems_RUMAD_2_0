@@ -1,0 +1,432 @@
+<Courses>
+  <classes>
+    <code>3015</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0002</classid>
+  <cred>4</cred>
+  <description>Introduction to Computer Programming I</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2020/03/CIIC-3015-Introduction-to-Computer-Programming-I.pdf</syllabus>
+  <term>First Semester, Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>3075</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0003</classid>
+  <cred>3</cred>
+  <description>Foundations of Computing</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/10/CIIC-3075-Foundations-of-Computing.pdf</syllabus>
+  <term>First Semester, Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>3081</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0004</classid>
+  <cred>3</cred>
+  <description>Computer Architecture I</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/10/CIIC-3081-Computer-Architecture-I.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4010</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0005</classid>
+  <cred>4</cred>
+  <description>Advanced Programming</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/10/CIIC-4010-Advanced-Programming.pdf</syllabus>
+  <term>First Semester, Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4020</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0006</classid>
+  <cred>4</cred>
+  <description>Data Structures</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/11/CIIC-4020-Data-Structures.pdf</syllabus>
+  <term>First Semester, Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4025</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0007</classid>
+  <cred>3</cred>
+  <description>Analysis and Design of Algorithms</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4025-Analysis-and-Design-of-Algorithms.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4030</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0008</classid>
+  <cred>3</cred>
+  <description>Programming Languages</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4030-Programming-Languages.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4050</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0009</classid>
+  <cred>4</cred>
+  <description>Operating Systems</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4050-Operating-Systems.pdf</syllabus>
+  <term>First Semester, Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4151</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0010</classid>
+  <cred>3</cred>
+  <description>Senior Design Project I</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4151-Senior-Design-Project.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4060</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0011</classid>
+  <cred>3</cred>
+  <description>Database Systems</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4060-Database-Systems.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4070</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0012</classid>
+  <cred>3</cred>
+  <description>Computer Networks</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4070-Computer-Networks.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4082</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0013</classid>
+  <cred>3</cred>
+  <description>Computer Architecture II</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4082-Computer-Architecture-II.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4995</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0014</classid>
+  <cred>3</cred>
+  <description>Engineering Practice for Coop Students</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4995-COOP-1.pdf</syllabus>
+  <term>According to Demand</term>
+  <years>According to Demand</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4998</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0015</classid>
+  <cred>3</cred>
+  <description>Undergraduate Research</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4998-Undergraduate-Research.pdf</syllabus>
+  <term>According to Demand</term>
+  <years>According to Demand</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5015</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0016</classid>
+  <cred>3</cred>
+  <description>Artificial Intelligence</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5015-Artificial-Intelligence.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Odd Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5017</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0017</classid>
+  <cred>3</cred>
+  <description>Operating Systems and Network Administration and Security</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5017-Operating-Systems-and-Network-Administration-and-Security.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Odd Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5018</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0018</classid>
+  <cred>3</cred>
+  <description>Cryptography and Network Security</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5018-Cryptography-and-Network-Security.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Even Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5019</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0019</classid>
+  <cred>3</cred>
+  <description>High-Performance Computing</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5019-High-Performance-Computing.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Odd Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5029</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0020</classid>
+  <cred>3</cred>
+  <description>Compilers Development</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5029-Compilers-Development.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Odd Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5045</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0021</classid>
+  <cred>3</cred>
+  <description>Automata and Formal Languages</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5045-Automata-and-Formal-Languages.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5110</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0022</classid>
+  <cred>3</cred>
+  <description>Bioinformatics Algorithms</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5110-Bioinformatics-Algorithms.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Even Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5120</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0023</classid>
+  <cred>3</cred>
+  <description>Virtual Machines</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5120-Virtual-Machines.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Even Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5130</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0024</classid>
+  <cred>3</cred>
+  <description>Cloud Computing Infrastructures</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5130-Cloud-Computing.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Odd Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5140</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0025</classid>
+  <cred>3</cred>
+  <description>Big Data Analytics</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5140-Big-Data-Analytics.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Even Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5150</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0026</classid>
+  <cred>3</cred>
+  <description>Machine Learning Algorithms</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2022/06/Syllabus-CIIC-5150-MLA.pdf</syllabus>
+  <term>According to Demand</term>
+  <years>According to Demand</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5995</code>
+    <name>CIIC</name>
+  </classes>
+  <classid>0027</classid>
+  <cred>3</cred>
+  <description>Selected Topics</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5995-Selected-Topics.pdf</syllabus>
+  <term>According to Demand</term>
+  <years>According to Demand</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4115</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0029</classid>
+  <cred>3</cred>
+  <description>Software Engineering Requirements</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4115-Software-Engineering-Requirements.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4116</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0030</classid>
+  <cred>3</cred>
+  <description>Software Design</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4116-Software-Design.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4117</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0031</classid>
+  <cred>3</cred>
+  <description>Software Reliability Testing</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4117-Software-Reliability-Testing.pdf</syllabus>
+  <term>Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4998</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0032</classid>
+  <cred>3</cred>
+  <description>Undergraduate Research in Software Engineering</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4998-Undergraduate-Research-in-Software-Engineering.pdf</syllabus>
+  <term>According to Demand</term>
+  <years>According to Demand</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5111</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0033</classid>
+  <cred>3</cred>
+  <description>Introduction to Human-Computer Interaction</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-5111-Introduction-to-Human-Computer-Interaction.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Even Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4151</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0034</classid>
+  <cred>3</cred>
+  <description>Software Engineering Project I</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2020/03/INSO-4151-Software-Engineering-Project-I.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4995</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0035</classid>
+  <cred>3</cred>
+  <description>COOP</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4995-COOP.pdf</syllabus>
+  <term>According to Demand</term>
+  <years>According to Demand</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>5118</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0036</classid>
+  <cred>3</cred>
+  <description>Software Engineering Project Management</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-5118-Software-Engineering-Project-Management.pdf</syllabus>
+  <term>First Semester</term>
+  <years>Odd Years</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>4101</code>
+    <name>INSO</name>
+  </classes>
+  <classid>0028</classid>
+  <cred>3</cred>
+  <description>Introduction to Software Engineering</description>
+  <syllabus>https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4101-Introduction-to-Software-Engineering.pdf</syllabus>
+  <term>First Semester, Second Semester</term>
+  <years>Every Year</years>
+</Courses>
+<Courses>
+  <classes>
+    <code>0000</code>
+    <name>Authorization from the Director of the Department</name>
+  </classes>
+  <classid>0037</classid>
+  <cred>0</cred>
+  <description>None</description>
+  <syllabus>None</syllabus>
+  <term>None</term>
+  <years>None</years>
+</Courses>
