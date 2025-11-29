@@ -25,6 +25,13 @@ class RequisiteDAO:
         result = cursor.fetchone()
         return result
 
+    def get_requisites_by_class_id(self, classid):
+        cursor = self.conn.cursor()
+        query = "SELECT classid, reqid, prereq FROM requisite WHERE classid = %s OR reqid = %s"
+        cursor.execute(query, (classid, classid))
+        result = cursor.fetchone()
+        return result
+
     def insert_requisite(self, classid, reqid, prereq):
         cursor = self.conn.cursor()
         query = "INSERT INTO requisite (classid, reqid, prereq) VALUES (%s, %s, %s) RETURNING (classid, reqid)"

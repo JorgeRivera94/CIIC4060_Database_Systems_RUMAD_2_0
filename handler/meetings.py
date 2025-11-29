@@ -78,7 +78,7 @@ class MeetingHandler:
         section_dao = SectionDAO()
 
         # Validate mid is not referenced by section
-        if section_dao.get_section_by_meeting_id(mid):
+        if section_dao.get_sections_by_meeting_id(mid):
             return jsonify(Error="Conflict"), 409
 
         temp = meeting_dao.delete_meeting_by_id(mid)

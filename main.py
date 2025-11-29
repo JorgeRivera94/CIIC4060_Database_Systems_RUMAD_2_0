@@ -17,8 +17,18 @@ def get_class():
     if request.method == "GET":
         return ClassHandler().get_all_classes()
     elif request.method == "POST":
-        # insert_class
-        pass
+        return ClassHandler().insert_class(request.json)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/classes/<int:cid>', methods=["GET", "PUT", "DELETE"])
+def get_class_by_id(cid):
+    if request.method == "GET":
+        return ClassHandler().get_class_by_id(cid)
+    elif request.method == "PUT":
+        return ClassHandler().update_class_by_id(cid, request.json)
+    elif request.method == "DELETE":
+        return ClassHandler().delete_class_by_id(cid)
     else:
         return jsonify("Method Not Supported"), 405
 

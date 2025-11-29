@@ -9,9 +9,23 @@ class SectionDAO:
 
         self.conn = psycopg2.connect(connect_url)
 
-    def get_section_by_meeting_id(self, mid):
+    def get_sections_by_meeting_id(self, mid):
         cursor = self.conn.cursor()
         query = "SELECT sid, roomid, cid, mid, semester, years, capacity FROM section WHERE mid = %s"
         cursor.execute(query, (mid,))
+        result = cursor.fetchone()
+        return result
+
+    def get_sections_by_class_id(self, cid):
+        cursor = self.conn.cursor()
+        query = "SELECT sid, roomid, cid, mid, semester, years, capacity FROM section WHERE cid = %s"
+        cursor.execute(query, (cid,))
+        result = cursor.fetchone()
+        return result
+
+    def get_sections_by_room_id(self, roomid):
+        cursor = self.conn.cursor()
+        query = "SELECT sid, roomid, cid, mid, semester, years, capacity FROM section WHERE roomid = %s"
+        cursor.execute(query, (roomid,))
         result = cursor.fetchone()
         return result
