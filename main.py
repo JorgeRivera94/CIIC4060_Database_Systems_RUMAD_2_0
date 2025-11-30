@@ -3,6 +3,7 @@ from flask_cors import CORS
 from handler.classes import ClassHandler
 from handler.meetings import MeetingHandler
 from handler.requisites import RequisiteHandler
+from handler.rooms import RoomHandler
 from handler.statistics import StatisticHandler
 
 app = Flask(__name__)
@@ -29,6 +30,26 @@ def get_class_by_id(cid):
         return ClassHandler().update_class_by_id(cid, request.json)
     elif request.method == "DELETE":
         return ClassHandler().delete_class_by_id(cid)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/room', methods=["GET", "POST"])
+def get_room():
+    if request.method == "GET":
+        return RoomHandler().get_all_rooms()
+    elif request.method == "POST":
+        return RoomHandler().insert_room(request.json)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/room/<int:rid>', methods=["GET", "PUT", "DELETE"])
+def get_room_by_id(rid):
+    if request.method == "GET":
+        return RoomHandler().get_room_by_id(rid)
+    elif request.method == "PUT":
+        return RoomHandler().update_room_by_id(rid, request.json)
+    elif request.method == "DELETE":
+        return RoomHandler().delete_room_by_id(rid)
     else:
         return jsonify("Method Not Supported"), 405
 

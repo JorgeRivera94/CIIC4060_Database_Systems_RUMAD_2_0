@@ -131,7 +131,7 @@ class ClassHandler:
                     new_years not in {"Every Year", "Even Years", "Odd Years", "According to Demand"}):
                 return jsonify(Error= "Bad Request"), 400
 
-            if int(cid) != int(dao.get_class_by_name_and_code(new_cname, new_ccode)):
+            if dao.get_class_by_name_and_code(new_cname, new_ccode) and int(cid) != int(dao.get_class_by_name_and_code(new_cname, new_ccode)):
                 return jsonify(Error= "Conflict"), 409
 
             status = dao.update_class_by_id(cid, new_cname, new_ccode, new_cdesc, new_term, new_years, new_cred, new_csyllabus)
