@@ -4,6 +4,7 @@ from handler.classes import ClassHandler
 from handler.meetings import MeetingHandler
 from handler.requisites import RequisiteHandler
 from handler.rooms import RoomHandler
+from handler.sections import SectionHandler
 from handler.statistics import StatisticHandler
 
 app = Flask(__name__)
@@ -70,6 +71,26 @@ def get_meeting_by_id(mid):
         return MeetingHandler().update_meeting_by_id(mid, request.json)
     elif request.method == "DELETE":
         return MeetingHandler().delete_meeting_by_id(mid)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route("/Fulcrum/api/section", methods=["GET", "POST"])
+def get_section():
+    if request.method == "GET":
+        return SectionHandler().get_all_sections()
+    elif request.method == "POST":
+        return SectionHandler().insert_section(request.json)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route("/Fulcrum/api/section/<int:sid>", methods=["GET", "PUT", "DELETE"])
+def get_section_by_id(sid):
+    if request.method == "GET":
+        return SectionHandler().get_section_by_id(sid)
+    elif request.method == "PUT":
+        return SectionHandler().update_section_by_id(sid, request.json)
+    elif request.method == "DELETE":
+        return SectionHandler().delete_section_by_id(sid)
     else:
         return jsonify("Method Not Supported"), 405
 

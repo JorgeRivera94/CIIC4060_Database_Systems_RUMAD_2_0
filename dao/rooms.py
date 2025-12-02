@@ -34,6 +34,15 @@ class RoomDAO:
             return result[0]
         return result
 
+    def get_room_capacity_from_id(self, rid):
+        cursor = self.conn.cursor()
+        query = "SELECT capacity FROM room WHERE rid = %s"
+        cursor.execute(query, (rid,))
+        result = cursor.fetchone()
+        if result:
+            return result[0]
+        return result
+
     def insert_room(self, building, room_number, capacity):
         cursor = self.conn.cursor()
         query = "INSERT INTO room (building, room_number, capacity) VALUES (%s, %s, %s) RETURNING rid"
