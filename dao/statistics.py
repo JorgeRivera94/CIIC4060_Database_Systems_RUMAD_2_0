@@ -9,6 +9,20 @@ class StatisticDAO:
 
         self.conn = psycopg2.connect(connect_url)
 
+    def get_sections_by_day_of_week(self, years, semester):
+        cursor = self.conn.cursor()
+        query = """
+        SELECT section.sid, meeting.cdays
+        FROM section INNER JOIN meeting ON section.mid = meeting.mid
+        WHERE section.years = %s
+        AND section.semester = %s
+        """
+        cursor.execute(query, (years, semester))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
     def define_get_duration(self):
         cursor = self.conn.cursor()
         query = """

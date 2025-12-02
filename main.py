@@ -112,6 +112,13 @@ def get_requisite_by_id(classid, reqid):
     else:
         return jsonify("Method Not Supported"), 405
 
+@app.route("/Fulcrum/api/stats/sections-by-day", methods=["GET"])
+def get_sections_by_day_of_week():
+    if request.method == "GET":
+        return StatisticHandler().get_sections_by_day_of_week(request.json)
+    else:
+        return jsonify("Method Not Supported"), 405
+
 @app.route("/Fulcrum/api/stats/top-classes-by-avg-duration/", methods=["GET"])
 def get_top_classes_by_avg_duration():
     if request.method == "GET":

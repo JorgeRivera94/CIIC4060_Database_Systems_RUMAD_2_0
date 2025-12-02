@@ -17,6 +17,54 @@ class StatisticHandler:
 
         return result
 
+    def map_sections_by_day_of_week(self, statistic):
+        result = {}
+        result["sid"] = statistic[0]
+        result["cdays"] = statistic[1]
+
+        return result
+
+    def get_sections_by_day_of_week(self, statistic_json):
+        dao = StatisticDAO()
+        year = semester = None
+        if "year" in statistic_json:
+            year = statistic_json["year"]
+        if "semester" in statistic_json:
+            semester = statistic_json["semester"]
+
+        if (year and semester and semester in {"Fall", "Spring", "V1", "V2"}
+                and len(str(year)) == 4 and str(year).isnumeric()):
+
+            days_freq = {"L":0, "M":0, "W":0, "J":0, "V":0, "S":0, "D":0}
+            temp = dao.get_sections_by_day_of_week(year, semester)
+            sections_and_days = []
+            for row in temp:
+                sections_and_days.append(self.map_sections_by_day_of_week(row))
+            for sid in sections_and_days:
+                if "L" in sid["cdays"]:
+                    days_freq["L"] += 1
+                if "M" in sid["cdays"]:
+                    days_freq["M"] += 1
+                if "W" in sid["cdays"]:
+                    days_freq["W"] += 1
+                if "J" in sid["cdays"]:
+                    days_freq["J"] += 1
+                if "V" in sid["cdays"]:
+                    days_freq["V"] += 1
+                if "S" in sid["cdays"]:
+                    days_freq["S"] += 1
+                if "D" in sid["cdays"]:
+                    days_freq["D"] += 1
+
+            result = []
+            for day in ("L", "M", "W", "J", "V", "S", "D"):
+                result.append({"day": day, "sections": days_freq[day]})
+
+            return jsonify(result), 200
+
+        else:
+            return jsonify(Error= "Bad Request"), 400
+
     def get_top_classes_by_avg_duration(self, statistic_json):
         dao = StatisticDAO()
         year = semester = limit = None
