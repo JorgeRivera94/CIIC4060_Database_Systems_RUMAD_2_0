@@ -72,6 +72,34 @@ class StatisticDAO:
             result.append(row)
         return result
 
+    def get_multi_room_classes(self, year, semester, limit, orderby):
+        cursor = self.conn.cursor()
+        if str(orderby).lower() == "desc":
+            query = """
+            SELECT class.cid, class.cname || class.ccode as fullcode, count(section.roomid)
+            FROM class INNER JOIN section ON class.cid = section.cid
+            WHERE section.years = %s
+            AND section.semester = %s
+            GROUP BY class.cid, class.cname, class.ccode
+            ORDER BY count(section.roomid) desc
+            LIMIT %s
+            """
+        else:
+            query = """
+            SELECT class.cid, class.cname || class.ccode as fullcode, count(section.roomid)
+            FROM class INNER JOIN section ON class.cid = section.cid
+            WHERE section.years = %s
+            AND section.semester = %s
+            GROUP BY class.cid, class.cname, class.ccode
+            ORDER BY count(section.roomid) asc
+            LIMIT %s
+            """
+        cursor.execute(query, (year, semester, limit))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
     def get_classes_without_prereqs(self):
         cursor = self.conn.cursor()
         query = """

@@ -33,6 +33,14 @@ class StatisticHandler:
 
         return result
 
+    def map_multi_room_classes(self, statistic):
+        result = {}
+        result["cid"] = statistic[0]
+        result["fullcode"] = statistic[1]
+        result["distinct_rooms"] = statistic[2]
+
+        return result
+
     def get_sections_by_day_of_week(self, statistic_json):
         dao = StatisticDAO()
         year = semester = None
@@ -126,6 +134,34 @@ class StatisticHandler:
             result = []
             for room in top_rooms:
                 result.append(self.map_top_rooms_by_utilization(room))
+            return jsonify(result), 200
+        else:
+            return jsonify(Error="Bad Request"), 400
+
+    def get_multi_room_classes(self, statistic_json):
+        dao = StatisticDAO()
+        year = semester= limit = orderby = None
+        if "year" in statistic_json:
+            year = statistic_json["year"]
+        if "semester" in statistic_json:
+            semester = statistic_json["semester"]
+        if "limit" in statistic_json:
+            limit = statistic_json["limit"]
+            if not limit:
+                limit = 5
+        else:
+            limit = 5
+        if "orderby" in statistic_json:
+            orderby = statistic_json["orderby"]
+
+        if (year and semester and limit and orderby and str(year).isnumeric() and len(str(year)) == 4
+                and semester in {"Fall", "Spring", "V1", "V2"} and 1 <= int(limit) <= 10
+                and orderby in {"asc", "desc"}):
+
+            multi_room_classes = dao.get_multi_room_classes(year, semester, limit, orderby)
+            result = []
+            for c in multi_room_classes:
+                result.append(self.map_multi_room_classes(c))
             return jsonify(result), 200
         else:
             return jsonify(Error="Bad Request"), 400
