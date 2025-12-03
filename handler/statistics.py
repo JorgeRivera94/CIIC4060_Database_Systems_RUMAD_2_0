@@ -41,6 +41,13 @@ class StatisticHandler:
 
         return result
 
+    def map_top_departments_by_sections(self, statistic):
+        result = {}
+        result["department"] = statistic[0]
+        result["sections"] = statistic[1]
+
+        return result
+
     def get_sections_by_day_of_week(self, statistic_json):
         dao = StatisticDAO()
         year = semester = None
@@ -162,6 +169,31 @@ class StatisticHandler:
             result = []
             for c in multi_room_classes:
                 result.append(self.map_multi_room_classes(c))
+            return jsonify(result), 200
+        else:
+            return jsonify(Error="Bad Request"), 400
+
+    def get_top_departments_by_sections(self, statistic_json):
+        dao = StatisticDAO()
+        year = semester = limit = None
+        if "year" in statistic_json:
+            year = statistic_json["year"]
+        if "semester" in statistic_json:
+            semester = statistic_json["semester"]
+        if "limit" in statistic_json:
+            limit = statistic_json["limit"]
+            if not limit:
+                limit = 1
+        else:
+            limit = 1
+
+        if (year and semester and limit and str(year).isnumeric() and len(str(year)) == 4
+                and semester in {"Fall", "Spring", "V1", "V2"} and 1 <= int(limit) <= 5):
+
+            top_departments = dao.get_top_departments_by_sections(year, semester, limit)
+            result = []
+            for department in top_departments:
+                result.append(self.map_top_departments_by_sections(department))
             return jsonify(result), 200
         else:
             return jsonify(Error="Bad Request"), 400

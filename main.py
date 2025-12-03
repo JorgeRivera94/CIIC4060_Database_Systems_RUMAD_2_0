@@ -140,6 +140,13 @@ def get_multi_room_classes():
     else:
         return jsonify("Method Not Supported"), 405
 
+@app.route("/Fulcrum/api/stats/top-departments-by-sections", methods=["GET"])
+def get_top_departments_by_sections():
+    if request.method == "GET":
+        return StatisticHandler().get_top_departments_by_sections(request.json)
+    else:
+        return jsonify("Method Not Supported"), 405
+
 @app.route("/Fulcrum/api/stats/classes-without-prereqs", methods=["GET"])
 def get_classes_without_prereqs():
     if request.method == "GET":
