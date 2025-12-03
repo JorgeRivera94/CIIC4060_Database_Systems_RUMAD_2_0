@@ -55,6 +55,23 @@ class StatisticDAO:
             result.append(row)
         return result
 
+    def get_top_rooms_by_utilization(self, year, semester, limit):
+        cursor = self.conn.cursor()
+        query = """
+        SELECT room.rid, room.building, room.room_number, avg(section.capacity ::FLOAT / room.capacity ::FLOAT) as utilization
+        FROM room INNER JOIN section ON room.rid = section.roomid
+        WHERE section.years = %s
+        AND section.semester = %s
+        GROUP BY room.rid, room.building, room.room_number
+        ORDER BY avg(section.capacity ::FLOAT / room.capacity ::FLOAT) DESC
+        LIMIT %s
+        """
+        cursor.execute(query, (year, semester, limit))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
     def get_classes_without_prereqs(self):
         cursor = self.conn.cursor()
         query = """

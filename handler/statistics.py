@@ -24,6 +24,15 @@ class StatisticHandler:
 
         return result
 
+    def map_top_rooms_by_utilization(self, statistic):
+        result = {}
+        result["rid"] = statistic[0]
+        result["building"] = statistic[1]
+        result["room_number"] = statistic[2]
+        result["utilization"] = statistic[3]
+
+        return result
+
     def get_sections_by_day_of_week(self, statistic_json):
         dao = StatisticDAO()
         year = semester = None
@@ -94,6 +103,30 @@ class StatisticHandler:
 
             else:
                 return jsonify(Error="Internal Server Error"), 500
+        else:
+            return jsonify(Error="Bad Request"), 400
+
+    def get_top_rooms_by_utilization(self, statistic_json):
+        dao = StatisticDAO()
+        year = semester = limit = None
+        if "year" in statistic_json:
+            year = statistic_json["year"]
+        if "semester" in statistic_json:
+            semester = statistic_json["semester"]
+        if "limit" in statistic_json:
+            limit = statistic_json["limit"]
+            if not limit:
+                limit = 5
+        else:
+            limit = 5
+        if (year and semester and limit and str(year).isnumeric() and len(str(year)) == 4
+                and semester in {"Fall", "Spring", "V1", "V2"} and 1 <= int(limit) <= 10):
+
+            top_rooms = dao.get_top_rooms_by_utilization(year, semester, limit)
+            result = []
+            for room in top_rooms:
+                result.append(self.map_top_rooms_by_utilization(room))
+            return jsonify(result), 200
         else:
             return jsonify(Error="Bad Request"), 400
 

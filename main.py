@@ -126,6 +126,14 @@ def get_top_classes_by_avg_duration():
     else:
         return jsonify("Method Not Supported"), 405
 
+@app.route("/Fulcrum/api/stats/top-rooms-by-utilization", methods=["GET"])
+def get_top_rooms_by_utilization():
+    if request.method == "GET":
+        return StatisticHandler().get_top_rooms_by_utilization(request.json)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+
 @app.route("/Fulcrum/api/stats/classes-without-prereqs", methods=["GET"])
 def get_classes_without_prereqs():
     if request.method == "GET":
