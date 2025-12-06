@@ -109,10 +109,10 @@ class ClassHandler:
                 new_cdesc = class_json["cdesc"]
             else:
                 new_cdesc = old_c_map["cdesc"]
-            if "terms" in class_json:
-                new_term = class_json["terms"]
+            if "term" in class_json:
+                new_term = class_json["term"]
             else:
-                new_term = old_c_map["terms"]
+                new_term = old_c_map["term"]
             if "years" in class_json:
                 new_years = class_json["years"]
             else:
