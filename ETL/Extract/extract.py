@@ -124,7 +124,7 @@ def extract_db(input_path, output_path):
 def download_syllabi(url, department, code, name):
     response = requests.get(url)
 
-    with open(f"ETL/Extract/syllabuses/{department}-{code}-{name}.pdf", "wb") as f:
+    with open(f"./syllabuses/{department}-{code}-{name}.pdf", "wb") as f:
         f.write(response.content)
         f.close()
 
@@ -132,8 +132,8 @@ def download_syllabi(url, department, code, name):
 # Main call to Extract the given files
 def main():
     # Source and destination directories
-    src_dir = "ETL/project_data/"
-    dst_dir = "ETL/Extract/extracted_data/"
+    src_dir = "../project_data/"
+    dst_dir = "./extracted_data/"
 
     for filename in os.listdir(src_dir):
         input_path = os.path.join(src_dir, filename)
@@ -152,7 +152,7 @@ def main():
             print(f"Unhandled extension {ext} for file {filename}.")
 
     # After converting the files to CSV
-    courses_path = "ETL/Extract/extracted_data/courses.csv"
+    courses_path = "./extracted_data/courses.csv"
     df = pd.read_csv(courses_path)
 
     for row in df.itertuples():

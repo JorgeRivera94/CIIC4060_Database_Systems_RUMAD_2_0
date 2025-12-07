@@ -1,0 +1,37 @@
+classes.code,classes.name,classid,cred,description,syllabus,term,years
+3015,CIIC,0002,4,Introduction to Computer Programming I,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2020/03/CIIC-3015-Introduction-to-Computer-Programming-I.pdf,"First Semester, Second Semester",Every Year
+3075,CIIC,0003,3,Foundations of Computing,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/10/CIIC-3075-Foundations-of-Computing.pdf,"First Semester, Second Semester",Every Year
+3081,CIIC,0004,3,Computer Architecture I,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/10/CIIC-3081-Computer-Architecture-I.pdf,First Semester,Every Year
+4010,CIIC,0005,4,Advanced Programming,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/10/CIIC-4010-Advanced-Programming.pdf,"First Semester, Second Semester",Every Year
+4020,CIIC,0006,4,Data Structures,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2023/11/CIIC-4020-Data-Structures.pdf,"First Semester, Second Semester",Every Year
+4025,CIIC,0007,3,Analysis and Design of Algorithms,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4025-Analysis-and-Design-of-Algorithms.pdf,Second Semester,Every Year
+4030,CIIC,0008,3,Programming Languages,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4030-Programming-Languages.pdf,First Semester,Every Year
+4050,CIIC,0009,4,Operating Systems,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4050-Operating-Systems.pdf,"First Semester, Second Semester",Every Year
+4151,CIIC,0010,3,Senior Design Project I,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4151-Senior-Design-Project.pdf,First Semester,Every Year
+4060,CIIC,0011,3,Database Systems,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4060-Database-Systems.pdf,Second Semester,Every Year
+4070,CIIC,0012,3,Computer Networks,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4070-Computer-Networks.pdf,Second Semester,Every Year
+4082,CIIC,0013,3,Computer Architecture II,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4082-Computer-Architecture-II.pdf,Second Semester,Every Year
+4995,CIIC,0014,3,Engineering Practice for Coop Students,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4995-COOP-1.pdf,According to Demand,According to Demand
+4998,CIIC,0015,3,Undergraduate Research,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-4998-Undergraduate-Research.pdf,According to Demand,According to Demand
+5015,CIIC,0016,3,Artificial Intelligence,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5015-Artificial-Intelligence.pdf,Second Semester,Odd Years
+5017,CIIC,0017,3,Operating Systems and Network Administration and Security,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5017-Operating-Systems-and-Network-Administration-and-Security.pdf,First Semester,Odd Years
+5018,CIIC,0018,3,Cryptography and Network Security,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5018-Cryptography-and-Network-Security.pdf,Second Semester,Even Years
+5019,CIIC,0019,3,High-Performance Computing,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5019-High-Performance-Computing.pdf,First Semester,Odd Years
+5029,CIIC,0020,3,Compilers Development,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5029-Compilers-Development.pdf,Second Semester,Odd Years
+5045,CIIC,0021,3,Automata and Formal Languages,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5045-Automata-and-Formal-Languages.pdf,First Semester,Every Year
+5110,CIIC,0022,3,Bioinformatics Algorithms,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5110-Bioinformatics-Algorithms.pdf,Second Semester,Even Years
+5120,CIIC,0023,3,Virtual Machines,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5120-Virtual-Machines.pdf,Second Semester,Even Years
+5130,CIIC,0024,3,Cloud Computing Infrastructures,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5130-Cloud-Computing.pdf,First Semester,Odd Years
+5140,CIIC,0025,3,Big Data Analytics,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5140-Big-Data-Analytics.pdf,First Semester,Even Years
+5150,CIIC,0026,3,Machine Learning Algorithms,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2022/06/Syllabus-CIIC-5150-MLA.pdf,According to Demand,According to Demand
+5995,CIIC,0027,3,Selected Topics,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/CIIC-5995-Selected-Topics.pdf,According to Demand,According to Demand
+4115,INSO,0029,3,Software Engineering Requirements,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4115-Software-Engineering-Requirements.pdf,Second Semester,Every Year
+4116,INSO,0030,3,Software Design,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4116-Software-Design.pdf,First Semester,Every Year
+4117,INSO,0031,3,Software Reliability Testing,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4117-Software-Reliability-Testing.pdf,Second Semester,Every Year
+4998,INSO,0032,3,Undergraduate Research in Software Engineering,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4998-Undergraduate-Research-in-Software-Engineering.pdf,According to Demand,According to Demand
+5111,INSO,0033,3,Introduction to Human-Computer Interaction,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-5111-Introduction-to-Human-Computer-Interaction.pdf,First Semester,Even Years
+4151,INSO,0034,3,Software Engineering Project I,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2020/03/INSO-4151-Software-Engineering-Project-I.pdf,First Semester,Every Year
+4995,INSO,0035,3,COOP,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4995-COOP.pdf,According to Demand,According to Demand
+5118,INSO,0036,3,Software Engineering Project Management,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-5118-Software-Engineering-Project-Management.pdf,First Semester,Odd Years
+4101,INSO,0028,3,Introduction to Software Engineering,https://www.uprm.edu/cse/wp-content/uploads/sites/153/2019/11/INSO-4101-Introduction-to-Software-Engineering.pdf,"First Semester, Second Semester",Every Year
+0000,Authorization from the Director of the Department,0037,0,None,None,None,None

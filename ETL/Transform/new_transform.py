@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 # Funtions to transform each source file
 def transform_room(rooms_src_path):
     df = pd.read_csv(rooms_src_path, na_values=[""])
@@ -9,7 +8,7 @@ def transform_room(rooms_src_path):
     # Make sure records are sorted by rid
     df = df.sort_values("rid").reset_index(drop=True)
 
-    df.to_csv("ETL/Transform/new_transformed_data/room.csv", index=False)
+    df.to_csv("./new_transformed_data/room.csv", index=False)
 
 
 def transform_meeting(meeting_src_path):
@@ -59,7 +58,7 @@ def transform_meeting(meeting_src_path):
     df["starttime"] = df["starttime"].dt.strftime("%H:%M:%S")
     df["endtime"] = df["endtime"].dt.strftime("%H:%M:%S")
 
-    df.to_csv("ETL/Transform/new_transformed_data/meeting.csv", index=False)
+    df.to_csv("./new_transformed_data/meeting.csv", index=False)
 
 
 def transform_class(courses_src_path):
@@ -86,7 +85,7 @@ def transform_class(courses_src_path):
     mask = df["cid"] >= 2
     df = df[mask].sort_values("cid").reset_index(drop=True)
 
-    df.to_csv("ETL/Transform/new_transformed_data/class.csv", index=False)
+    df.to_csv("./new_transformed_data/class.csv", index=False)
 
 
 def transform_requisite(requisites_src_path):
@@ -104,12 +103,12 @@ def transform_requisite(requisites_src_path):
     df["prereq"] = df["prereq"].astype(bool)
 
     # Ensure referenced classes exist
-    transformed_class_path = "ETL/Transform/new_transformed_data/class.csv"
+    transformed_class_path = "./new_transformed_data/class.csv"
     valid_ids = pd.read_csv(transformed_class_path, usecols=["cid"])["cid"].to_list()
     mask = (df["classid"].isin(valid_ids)) & (df["reqid"].isin(valid_ids))
     df = df[mask].sort_values(["classid", "reqid"]).reset_index(drop=True)
 
-    df.to_csv("ETL/Transform/new_transformed_data/requisite.csv", index=False)
+    df.to_csv("./new_transformed_data/requisite.csv", index=False)
 
 
 def transform_sections(sections_src_path):
@@ -129,9 +128,9 @@ def transform_sections(sections_src_path):
     df = df[column_order]
 
     # Sections must be taught in a valid classroom and meeting, and the class must exist
-    transformed_room_path = "ETL/Transform/new_transformed_data/room.csv"
-    transformed_meeting_path = "ETL/Transform/new_transformed_data/meeting.csv"
-    transformed_class_path = "ETL/Transform/new_transformed_data/class.csv"
+    transformed_room_path = "./new_transformed_data/room.csv"
+    transformed_meeting_path = "./new_transformed_data/meeting.csv"
+    transformed_class_path = "./new_transformed_data/class.csv"
 
     existing_room_ids = pd.read_csv(transformed_room_path, usecols=["rid"])["rid"].to_list()
     existing_meting_ids = pd.read_csv(transformed_meeting_path, usecols=["mid"])["mid"].to_list()
@@ -197,16 +196,16 @@ def transform_sections(sections_src_path):
     df = df.drop(columns=["starttime"])
     df = df.sort_values("sid").reset_index(drop=True)
 
-    df.to_csv("ETL/Transform/new_transformed_data/section.csv", index=False)
+    df.to_csv("./new_transformed_data/section.csv", index=False)
 
 
 def main():
     # Paths to source files to be transformed
-    courses_src_path = "ETL/Extract/extracted_data/courses.csv"
-    meeting_src_path = "ETL/Extract/extracted_data/meeting.csv"
-    requisites_src_path = "ETL/Extract/extracted_data/requisites_requisites.csv"
-    rooms_src_path = "ETL/Extract/extracted_data/rooms.csv"
-    sections_src_path = "ETL/Extract/extracted_data/sections.csv"
+    courses_src_path = "../Extract/extracted_data/courses.csv"
+    meeting_src_path = "../Extract/extracted_data/meeting.csv"
+    requisites_src_path = "../Extract/extracted_data/requisites_requisites.csv"
+    rooms_src_path = "../Extract/extracted_data/rooms.csv"
+    sections_src_path = "../Extract/extracted_data/sections.csv"
 
     transform_room(rooms_src_path)
     transform_meeting(meeting_src_path)
