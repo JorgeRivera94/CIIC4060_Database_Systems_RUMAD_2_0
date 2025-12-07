@@ -6,6 +6,7 @@ from handler.requisites import RequisiteHandler
 from handler.rooms import RoomHandler
 from handler.sections import SectionHandler
 from handler.statistics import StatisticHandler
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -155,4 +156,5 @@ def get_classes_without_prereqs():
         return jsonify("Method Not Supported"), 405
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)

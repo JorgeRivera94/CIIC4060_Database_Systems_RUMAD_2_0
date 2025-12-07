@@ -1,13 +1,11 @@
-from config.pgconfig import pg_config
 import psycopg2
+import os
 
 class SectionDAO:
     def __init__(self):
-        connect_url = "dbname=%s user=%s password=%s port=%d host=%s" \
-                      % (pg_config["dbname"], pg_config["user"],
-                         pg_config["password"], pg_config["port"], pg_config["host"])
+        DATABASE_URL = os.environ.get("DATABASE_URL")
 
-        self.conn = psycopg2.connect(connect_url)
+        self.conn = psycopg2.connect(DATABASE_URL)
 
     def get_all_sections(self):
         cursor = self.conn.cursor()
