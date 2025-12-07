@@ -1,0 +1,584 @@
+{
+  "info": {
+    "_postman_id": "5f6ddb4f-f4ad-42c9-bf55-908453b6315e",
+    "name": "Fulcrum CRUD Endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "meeting",
+      "id": "94496855-9ebd-4588-99aa-ccfc63d04ee6",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"ccode\": \"101\",\r\n    \"cdays\": \"MJ\",\r\n    \"endtime\": \"1900-01-01T08:45:00\",\r\n    \"starttime\": \"1900-01-01T07:30:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://db-ciic4060-team-fulcrum-3d540ddad512.herokuapp.com/Fulcrum/api/meeting",
+          "protocol": "http",
+          "host": [
+            "db-ciic4060-team-fulcrum-3d540ddad512",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "Fulcrum",
+            "api",
+            "meeting"
+          ]
+        }
+      }
+    },
+    {
+      "name": "get meeting by id",
+      "id": "10143eaa-6daa-47a6-a2bb-76d9a9942287",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseURL}}/meeting/22",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "meeting",
+            "22"
+          ]
+        }
+      }
+    },
+    {
+      "name": "put meeting by id",
+      "id": "da7a4895-e5ce-48dd-9edf-83a2fdf823f4",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"ccode\": \"103\",\r\n    \"cdays\": \"MJ\",\r\n    \"endtime\": \"1900-01-01T08:45:00\",\r\n    \"starttime\": \"1900-01-01T07:30:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/meeting/22",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "meeting",
+            "22"
+          ]
+        }
+      }
+    },
+    {
+      "name": "del meeting by id",
+      "id": "2d8f3615-894b-45ea-b163-58588796d923",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseURL}}/meeting/22",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "meeting",
+            "22"
+          ]
+        }
+      }
+    },
+    {
+      "name": "requisite",
+      "id": "b31612b2-5edc-45bd-a6d2-65b8ff5be065",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"classid\": 3,\r\n    \"prereq\": true,\r\n    \"reqid\": 4\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/requisite",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "requisite"
+          ]
+        }
+      }
+    },
+    {
+      "name": "get requisite by id",
+      "id": "32c51098-8866-4d84-a671-8cc40f7552f2",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseURL}}/requisite/3/4",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "requisite",
+            "3",
+            "4"
+          ]
+        }
+      }
+    },
+    {
+      "name": "del requisite by id",
+      "id": "81491980-cd27-42d2-89e9-12e09149d681",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseURL}}/requisite/3/4",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "requisite",
+            "3",
+            "4"
+          ]
+        }
+      }
+    },
+    {
+      "name": "classes",
+      "id": "0b79626c-485b-4042-b918-c0c758edf439",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cname\": \"TEST\",\r\n    \"ccode\": \"1111\",\r\n    \"cdesc\": \"description\",\r\n    \"term\": \"First Semester\",\r\n    \"years\": \"Every Year\",\r\n    \"cred\": 7,\r\n    \"csyllabus\": \"url\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/classes",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "classes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "get classes by id",
+      "id": "348725b9-13f2-461a-bc2c-ff59eff3fa99",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseURL}}/classes/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "classes",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "put classes by id",
+      "id": "38e92935-c6eb-485e-b0ff-89166491bb41",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cname\": \"TEST\",\r\n    \"ccode\": \"2222\",\r\n    \"cdesc\": \"description\",\r\n    \"term\": \"First Semester\",\r\n    \"years\": \"Every Year\",\r\n    \"cred\": 7,\r\n    \"csyllabus\": \"url\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/classes/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "classes",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "del classes by id",
+      "id": "b2e6bfb1-d6b9-4f47-931a-0361844a9283",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseURL}}/classes/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "classes",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "room",
+      "id": "822b51d1-6255-4e74-84af-ae243ca8b2c7",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"building\": \"TEST\",\r\n    \"capacity\": 111,\r\n    \"room_number\": \"111\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/room",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "room"
+          ]
+        }
+      }
+    },
+    {
+      "name": "get room by id",
+      "id": "5b879c5b-c23d-4eca-9e7a-0706a13ed737",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseURL}}/room/26",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "room",
+            "26"
+          ]
+        }
+      }
+    },
+    {
+      "name": "put room by id",
+      "id": "2887f609-b3d7-483b-8aa6-ae1e60dbc29b",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"building\": \"TEST\",\r\n    \"capacity\": 222,\r\n    \"room_number\": \"222\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/room/26",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "room",
+            "26"
+          ]
+        }
+      }
+    },
+    {
+      "name": "del room by id",
+      "id": "acafd584-4211-4286-8eee-80bd973fd3a9",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseURL}}/room/26",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "room",
+            "26"
+          ]
+        }
+      }
+    },
+    {
+      "name": "section",
+      "id": "45456729-7ae1-4282-9d18-34a527293dc9",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"capacity\": 25,\r\n    \"mid\": 1,\r\n    \"roomid\": 1,\r\n    \"semester\": \"Fall\",\r\n    \"years\": \"2025\",\r\n    \"cid\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/section",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "section"
+          ]
+        }
+      }
+    },
+    {
+      "name": "get section by id",
+      "id": "074f0d26-8cf0-4719-a289-87b4acb27628",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseURL}}/section/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "section",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "put section by id",
+      "id": "8a045f8a-67d6-4e91-8da9-efd14c2366e5",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"capacity\": 2,\r\n    \"mid\": 1,\r\n    \"roomid\": 1,\r\n    \"semester\": \"Fall\",\r\n    \"cid\": 2,\r\n    \"years\": \"5555\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/section/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "section",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "del section by id",
+      "id": "3c23114d-10f6-4b31-a9da-f7894e65c021",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseURL}}/section/1",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "section",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Longest average meeting durations",
+      "id": "be053dfa-eed1-494d-a5ed-92db1c6b2926",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"year\": \"2024\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/stats/top-classes-by-avg-duration",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "stats",
+            "top-classes-by-avg-duration"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Classes without prerequisites",
+      "id": "35b15968-83de-46b5-a9ef-44c07cd2fbe9",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseURL}}/stats/classes-without-prereqs",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "stats",
+            "classes-without-prereqs"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Top departments by sections",
+      "id": "d534b72f-fca6-4284-9761-84269d356a83",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"year\": \"2025\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/stats/top-departments-by-sections",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "stats",
+            "top-departments-by-sections"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Top rooms by average utilization",
+      "id": "e934ba38-2f00-4149-94a3-a505796098de",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"year\": \"2025\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/stats/top-rooms-by-utilization",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "stats",
+            "top-rooms-by-utilization"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Multi-room classes",
+      "id": "f5f0b978-320d-493d-bf33-18d720a0476a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"year\": \"2022\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 10,\r\n    \"orderby\": \"asc\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/stats/multi-room-classes",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "stats",
+            "multi-room-classes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Sections by day-of-week",
+      "id": "b72f5073-63fa-4fe6-b142-bf787e83dd98",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"year\": \"2025\",\r\n    \"semester\": \"Fall\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/stats/sections-by-day",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "stats",
+            "sections-by-day"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "71376fdb-13f0-4356-a7e7-d875aff1d5d8",
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}

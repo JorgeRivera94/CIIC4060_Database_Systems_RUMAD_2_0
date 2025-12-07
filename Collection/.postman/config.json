@@ -1,0 +1,14 @@
+{
+  "workspace": {
+    "id": "c3c06c39-a443-4c6e-89aa-bccb69f7a7cc"
+  },
+  "entities": {
+    "collections": [
+      "..\\postman\\collections\\Fulcrum CRUD Endpoints.postman_collection.json"
+    ],
+    "environments": [],
+    "specs": [],
+    "flows": [],
+    "globals": []
+  }
+}
