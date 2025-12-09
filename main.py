@@ -6,6 +6,7 @@ from handler.requisites import RequisiteHandler
 from handler.rooms import RoomHandler
 from handler.sections import SectionHandler
 from handler.statistics import StatisticHandler
+from handler.auth import AuthHandler
 import os
 
 app = Flask(__name__)
@@ -152,6 +153,13 @@ def get_top_departments_by_sections():
 def get_classes_without_prereqs():
     if request.method == "GET":
         return StatisticHandler().get_classes_without_prereqs()
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route("/Fulcrum/api/auth", methods=["GET"])
+def get_auth():
+    if request.method == "GET":
+        return AuthHandler().get_name_from_auth(request.json)
     else:
         return jsonify("Method Not Supported"), 405
 
