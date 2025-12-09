@@ -10,6 +10,7 @@
       "id": "94496855-9ebd-4588-99aa-ccfc63d04ee6",
       "request": {
         "method": "POST",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"ccode\": \"101\",\r\n    \"cdays\": \"MJ\",\r\n    \"endtime\": \"1900-01-01T08:45:00\",\r\n    \"starttime\": \"1900-01-01T07:30:00\"\r\n}",
@@ -33,13 +34,15 @@
             "meeting"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "get meeting by id",
       "id": "10143eaa-6daa-47a6-a2bb-76d9a9942287",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/meeting/22",
           "host": [
@@ -50,13 +53,15 @@
             "22"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "put meeting by id",
       "id": "da7a4895-e5ce-48dd-9edf-83a2fdf823f4",
       "request": {
         "method": "PUT",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"ccode\": \"103\",\r\n    \"cdays\": \"MJ\",\r\n    \"endtime\": \"1900-01-01T08:45:00\",\r\n    \"starttime\": \"1900-01-01T07:30:00\"\r\n}",
@@ -76,13 +81,15 @@
             "22"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "del meeting by id",
       "id": "2d8f3615-894b-45ea-b163-58588796d923",
       "request": {
         "method": "DELETE",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/meeting/22",
           "host": [
@@ -93,13 +100,15 @@
             "22"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "requisite",
       "id": "b31612b2-5edc-45bd-a6d2-65b8ff5be065",
       "request": {
         "method": "POST",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"classid\": 3,\r\n    \"prereq\": true,\r\n    \"reqid\": 4\r\n}",
@@ -118,13 +127,15 @@
             "requisite"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "get requisite by id",
       "id": "32c51098-8866-4d84-a671-8cc40f7552f2",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/requisite/3/4",
           "host": [
@@ -136,13 +147,15 @@
             "4"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "del requisite by id",
       "id": "81491980-cd27-42d2-89e9-12e09149d681",
       "request": {
         "method": "DELETE",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/requisite/3/4",
           "host": [
@@ -154,13 +167,15 @@
             "4"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "classes",
       "id": "0b79626c-485b-4042-b918-c0c758edf439",
       "request": {
         "method": "POST",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"cname\": \"TEST\",\r\n    \"ccode\": \"1111\",\r\n    \"cdesc\": \"description\",\r\n    \"term\": \"First Semester\",\r\n    \"years\": \"Every Year\",\r\n    \"cred\": 7,\r\n    \"csyllabus\": \"url\"\r\n}",
@@ -179,13 +194,15 @@
             "classes"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "get classes by id",
       "id": "348725b9-13f2-461a-bc2c-ff59eff3fa99",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/classes/1",
           "host": [
@@ -196,13 +213,15 @@
             "1"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "put classes by id",
       "id": "38e92935-c6eb-485e-b0ff-89166491bb41",
       "request": {
         "method": "PUT",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"cname\": \"TEST\",\r\n    \"ccode\": \"2222\",\r\n    \"cdesc\": \"description\",\r\n    \"term\": \"First Semester\",\r\n    \"years\": \"Every Year\",\r\n    \"cred\": 7,\r\n    \"csyllabus\": \"url\"\r\n}",
@@ -222,13 +241,15 @@
             "1"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "del classes by id",
       "id": "b2e6bfb1-d6b9-4f47-931a-0361844a9283",
       "request": {
         "method": "DELETE",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/classes/1",
           "host": [
@@ -239,13 +260,15 @@
             "1"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "room",
       "id": "822b51d1-6255-4e74-84af-ae243ca8b2c7",
       "request": {
         "method": "POST",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"building\": \"TEST\",\r\n    \"capacity\": 111,\r\n    \"room_number\": \"111\"\r\n}",
@@ -264,13 +287,15 @@
             "room"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "get room by id",
       "id": "5b879c5b-c23d-4eca-9e7a-0706a13ed737",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/room/26",
           "host": [
@@ -281,13 +306,15 @@
             "26"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "put room by id",
       "id": "2887f609-b3d7-483b-8aa6-ae1e60dbc29b",
       "request": {
         "method": "PUT",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"building\": \"TEST\",\r\n    \"capacity\": 222,\r\n    \"room_number\": \"222\"\r\n}",
@@ -307,13 +334,15 @@
             "26"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "del room by id",
       "id": "acafd584-4211-4286-8eee-80bd973fd3a9",
       "request": {
         "method": "DELETE",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/room/26",
           "host": [
@@ -324,13 +353,15 @@
             "26"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "section",
       "id": "45456729-7ae1-4282-9d18-34a527293dc9",
       "request": {
         "method": "POST",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"capacity\": 25,\r\n    \"mid\": 1,\r\n    \"roomid\": 1,\r\n    \"semester\": \"Fall\",\r\n    \"years\": \"2025\",\r\n    \"cid\": 2\r\n}",
@@ -349,13 +380,15 @@
             "section"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "get section by id",
       "id": "074f0d26-8cf0-4719-a289-87b4acb27628",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/section/1",
           "host": [
@@ -366,13 +399,15 @@
             "1"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "put section by id",
       "id": "8a045f8a-67d6-4e91-8da9-efd14c2366e5",
       "request": {
         "method": "PUT",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"capacity\": 2,\r\n    \"mid\": 1,\r\n    \"roomid\": 1,\r\n    \"semester\": \"Fall\",\r\n    \"cid\": 2,\r\n    \"years\": \"5555\"\r\n}",
@@ -392,13 +427,15 @@
             "1"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "del section by id",
       "id": "3c23114d-10f6-4b31-a9da-f7894e65c021",
       "request": {
         "method": "DELETE",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/section/1",
           "host": [
@@ -409,7 +446,8 @@
             "1"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Longest average meeting durations",
@@ -419,9 +457,10 @@
       },
       "request": {
         "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"year\": \"2024\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 1\r\n}",
+          "raw": "{\r\n    \"year\": \"2024\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 10\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -438,13 +477,15 @@
             "top-classes-by-avg-duration"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Classes without prerequisites",
       "id": "35b15968-83de-46b5-a9ef-44c07cd2fbe9",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "{{baseURL}}/stats/classes-without-prereqs",
           "host": [
@@ -455,7 +496,8 @@
             "classes-without-prereqs"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Top departments by sections",
@@ -465,6 +507,7 @@
       },
       "request": {
         "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"year\": \"2025\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 5\r\n}",
@@ -484,7 +527,8 @@
             "top-departments-by-sections"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Top rooms by average utilization",
@@ -494,6 +538,7 @@
       },
       "request": {
         "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"year\": \"2025\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 5\r\n}",
@@ -513,7 +558,8 @@
             "top-rooms-by-utilization"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Multi-room classes",
@@ -523,6 +569,7 @@
       },
       "request": {
         "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"year\": \"2022\",\r\n    \"semester\": \"Fall\",\r\n    \"limit\": 10,\r\n    \"orderby\": \"asc\"\r\n}",
@@ -542,7 +589,8 @@
             "multi-room-classes"
           ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Sections by day-of-week",
@@ -552,6 +600,7 @@
       },
       "request": {
         "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"year\": \"2025\",\r\n    \"semester\": \"Fall\"\r\n}",
@@ -571,7 +620,35 @@
             "sections-by-day"
           ]
         }
-      }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth",
+      "id": "15c2c211-cc0f-4f26-96f1-e9f76320bf33",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"username1\",\r\n    \"password\": \"password1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/auth",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "auth"
+          ]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
