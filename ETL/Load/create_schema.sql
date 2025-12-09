@@ -49,3 +49,15 @@ CREATE TABLE IF NOT EXISTS section (
     years VARCHAR(50),
     capacity INT
 );
+
+CREATE TABLE IF NOT EXISTS users (
+    uid SERIAL PRIMARY KEY,
+    username VARCHAR(50),
+    name VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS passwords (
+    pid SERIAL PRIMARY KEY,
+    password VARCHAR(50),
+    uid INT REFERENCES users (uid)
+);
