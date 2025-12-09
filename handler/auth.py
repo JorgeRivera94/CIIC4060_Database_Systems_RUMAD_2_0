@@ -4,7 +4,7 @@ from dao.auth import AuthDAO
 class AuthHandler:
     def map_auth_name(self, name):
         result = {}
-        result["name"] = name[0]
+        result["name"] = name
 
         return result
 
