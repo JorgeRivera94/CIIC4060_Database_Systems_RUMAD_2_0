@@ -1,10 +1,11 @@
 import psycopg2
-from config.pgconfig import pg_config_heroku
+import os
 
 class AuthDAO:
     def __init__(self):
-        connect_url = "dbname=%s user=%s password=%s port=%s host=%s" %(pg_config_heroku["dbname"], pg_config_heroku["user"], pg_config_heroku["password"], pg_config_heroku["port"], pg_config_heroku["host"])
-        self.conn = psycopg2.connect(connect_url)
+        DATABASE_URL = os.environ.get("DATABASE_URL")
+
+        self.conn = psycopg2.connect(DATABASE_URL)
 
     def get_all_pairs(self):
         cursor = self.conn.cursor()
