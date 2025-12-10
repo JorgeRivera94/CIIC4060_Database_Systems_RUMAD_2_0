@@ -14,14 +14,22 @@ class ChatOllamaBot:
         self.syllabus_dao = SyllabusDAO()
 
         self.prompt = PromptTemplate(
-            template="""You are an assistant for question-answering tasks. \n
-                Use the following documents and the conversation history to answer the question. \n
-                If you don't know the answer, just say that you don't know. \n
+            template="""
+                You are an assistant that answers questions about university courses using official syllabi.
+                You are given text fragments extracted from PDFs. The text may contain noise such as '[UNK]' or missing
+                punctuation; ignore that noise and focus on the meaning.
+                When the question is about how grades are divided, evaluation strategies, or grading system, you must
+                look for sections that mention things like 'evaluation strategies', 'quantity', 'percent', 'exams',
+                'final exam', 'projects', or a table of percentages, and use those numbers to describe how grades are
+                divided (e.g., '3 exams worth 45%, final exam 20%, project 35%'). \n
+                Use the following documents and the conversation history to answer the question.
+                If you don't know the answer, just say that you don't know.
                 Use ten sentences maximum and keep the answer concise. \n
-                Conversation history: {history} \n
-                Documents: {documents} \n
+                Conversation history: \n{history} \n
+                Documents: \n{documents} \n
                 Question: {question} \n
-                Answer:""",
+                Answer:
+                """,
             input_variables=["question", "documents", "history"],
         )
 
@@ -41,15 +49,13 @@ class ChatOllamaBot:
         ccode = m.group(2)
         return cname, ccode
 
-    def _retrieve_context(self, emb, question: str) -> List[str]:
-        # dao = SyllabusDAO()
-        # fragments = dao.get_fragments(str(emb.tolist()))
-        # context: List[str] = []
-        # for f in fragments:
-        #     if len(f) > 2 and f[3] is not None:
-        #         context.append(f[3])
-        # return context
+    def _clean_chunk(self, text: str) -> str:
+        # Remove [UNK] tokens and normalize spaces
+        text = text.replace("[UNK]", " ")
+        text = re.sub(r"\s+", " ", text).strip()
+        return text
 
+    def _retrieve_context(self, emb, question: str) -> List[str]:
         embedding_text = str(emb.tolist())
         cname, ccode = self._extract_course_from_question(question)
 
@@ -61,7 +67,7 @@ class ChatOllamaBot:
         context: List[str] = []
         for f in fragments:
             if len(f) > 3 and f[3] is not None:
-                context.append(str(f[3]))
+                context.append(self._clean_chunk(str(f[3])))
         return context
 
     def _format_history(

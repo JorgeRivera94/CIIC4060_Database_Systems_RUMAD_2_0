@@ -39,7 +39,7 @@ class SyllabusDAO:
         WHERE class.cname = %s
         AND class.ccode = %s
         ORDER BY embedding_text <-> %s, chunkid 
-        LIMIT 60
+        LIMIT 15
         """
         cursor.execute(query, (cname, ccode, embedding_text))
         result = []
