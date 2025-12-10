@@ -1,10 +1,17 @@
+from config.pgconfig import pg_config
 import psycopg2
 import os
 
 class ClassDAO:
     def __init__(self):
-        DATABASE_URL = os.environ.get("DATABASE_URL")
-
+        # DATABASE_URL = os.environ.get("DATABASE_URL")
+        DATABASE_URL = "dbname=%s password=%s host=%s port=%s user=%s" % \
+                       (pg_config["dbname"],
+                        pg_config["password"],
+                        pg_config["host"],
+                        pg_config["port"],
+                        pg_config["user"]
+                        )
         self.conn = psycopg2.connect(DATABASE_URL)
 
     def get_all_classes(self):

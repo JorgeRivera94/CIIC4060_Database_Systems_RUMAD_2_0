@@ -33,9 +33,15 @@ CREATE TABLE IF NOT EXISTS requisite (
     PRIMARY KEY (classid, reqid)
 );
 
+CREATE TABLE IF NOT EXISTS docs (
+    did SERIAL PRIMARY KEY,
+    docname VARCHAR(255)
+);
+
 CREATE TABLE IF NOT EXISTS syllabus (
     chunkid SERIAL PRIMARY KEY,
     courseid INT REFERENCES class (cid),
+    did INT REFERENCES docs (did),
     embedding_text VECTOR(768),
     chunk VARCHAR(500)
 );

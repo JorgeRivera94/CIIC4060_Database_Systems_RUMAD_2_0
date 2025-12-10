@@ -8,9 +8,13 @@ from handler.sections import SectionHandler
 from handler.statistics import StatisticHandler
 from handler.auth import AuthHandler
 import os
+from llm.chatollama import ChatOllamaBot
+import traceback
 
 app = Flask(__name__)
 CORS(app)
+
+chat_bot = ChatOllamaBot()
 
 @app.route('/Fulcrum/api')
 def greeting():
@@ -163,6 +167,31 @@ def get_auth():
     else:
         return jsonify("Method Not Supported"), 405
 
+@app.route("/Fulcrum/api/chat", methods=["POST"])
+def chat():
+    if request.method == "POST":
+        data = request.get_json(silent=True) or {}
+        question = data.get("question")
+        history = data.get("history") or []
+
+        if not question:
+            return jsonify(Error="Bad Request"), 400
+
+        if not isinstance(history, list):
+            history = []
+
+        try:
+            answer = chat_bot.chat(question=question, history=history)
+        except Exception as e:
+            # return jsonify(Error=f"Internal Server Error. {e}"), 500
+            traceback.print_exc()
+            return jsonify(error="Internal Server Error", details=str(e)), 500
+
+        return jsonify({"answer": answer}), 200
+    else:
+        return jsonify("Method Not Supported"), 405
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)
+    # port = int(os.environ.get("PORT", 5000))
+    # app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=True)
