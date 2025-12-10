@@ -39,9 +39,15 @@ def logout_page():
     logout_pressed = st.button("Log out")
 
     if logout_pressed:
-        st.session_state.logged_in = False
-        st.success("Successfully logged in")
-        st.session_state.name = None
+        # Reset states
+        if "logged_in" in st.session_state:
+            st.session_state.logged_in = False
+        if "name" in st.session_state:
+            st.session_state.name = None
+        if "messages" in st.session_state:
+            st.session_state.messages = []
+
+        st.success("Successfully logged out")
         st.rerun()
 
 # Start logged out

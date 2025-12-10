@@ -13,7 +13,7 @@ st.header("Chatbot")
 
 if st.session_state["logged_in"]:
 
-    if "messages" not in st.session_state:
+    if "messages" not in st.session_state or st.session_state["messages"] == []:
         st.session_state.messages = [{"role": "assistant", "content": f"Hi, {st.session_state["name"]}! Any questions?"}]
 
     # Show existing messages
