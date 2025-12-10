@@ -1,4 +1,5 @@
 from dao.syllabuses import SyllabusDAO
+from dao.classes import ClassDAO
 from sentence_transformers import SentenceTransformer
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
@@ -12,6 +13,13 @@ class ChatOllamaBot:
     def __init__(self, model: Optional[SentenceTransformer] = None):
         self.model = model or _model
         self.syllabus_dao = SyllabusDAO()
+        self.class_dao = ClassDAO()
+
+        # Get all cdesc
+        raw_cdescs = self.class_dao.get_all_cdesc()
+        # Flatten and dedupe
+        self.cdesc_list: List[str] = sorted({row[0] for row in raw_cdescs if row and row[0]})
+        self.cdesc_lower_map = {c.lower(): c for c in self.cdesc_list}
 
         self.prompt = PromptTemplate(
             template="""
@@ -49,6 +57,29 @@ class ChatOllamaBot:
         ccode = m.group(2)
         return cname, ccode
 
+    # Check if cdesc in question
+    def _extract_cdesc_from_question(self, question: str) -> Optional[str]:
+        q_lower = question.lower()
+
+        # If "course" or "class" in question
+        course_words = {"course", "class"}
+        if not any(word in q_lower for word in course_words):
+            return None
+
+        # Short cdesc could be part of the conversation and maybe not reference a class like "data structures"
+        matches: List[tuple[str, int]] = []
+        for cdesc in self.cdesc_list:
+            cdesc_lower = cdesc.lower()
+            if cdesc_lower in q_lower:
+                matches.append((cdesc, len(cdesc)))
+
+        if not matches:
+            return None
+
+        # Return longest cdesc
+        matches.sort(key=lambda x: x[1], reverse=True)
+        return matches[0][0]
+
     def _clean_chunk(self, text: str) -> str:
         # Remove [UNK] tokens and normalize spaces
         text = text.replace("[UNK]", " ")
@@ -62,7 +93,11 @@ class ChatOllamaBot:
         if cname and ccode:
             fragments = self.syllabus_dao.get_fragments_by_cname_ccode(embedding_text, cname, ccode)
         else:
-            fragments = self.syllabus_dao.get_fragments(embedding_text)
+            cdesc = self._extract_cdesc_from_question(question)
+            if cdesc:
+                fragments = self.syllabus_dao.get_fragments_by_cdesc(embedding_text, cdesc)
+            else:
+                fragments = self.syllabus_dao.get_fragments(embedding_text)
 
         context: List[str] = []
         for f in fragments:
