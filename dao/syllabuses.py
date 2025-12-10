@@ -31,6 +31,22 @@ class SyllabusDAO:
             result.append(row)
         return result
 
+    def get_fragments_by_cname_ccode(self, embedding_text, cname, ccode):
+        cursor = self.conn.cursor()
+        query = """
+        SELECT syllabus.courseid, syllabus.did, syllabus.chunkid, syllabus.chunk 
+        FROM docs INNER JOIN syllabus ON docs.did = syllabus.did INNER JOIN class ON syllabus.courseid = class.cid
+        WHERE class.cname = %s
+        AND class.ccode = %s
+        ORDER BY embedding_text <-> %s, chunkid 
+        LIMIT 60
+        """
+        cursor.execute(query, (cname, ccode, embedding_text))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
     def get_syllabuses_by_class_id(self, courseid):
         cursor = self.conn.cursor()
         query = "SELECT chunkid, courseid, did, embedding_text, chunk FROM syllabus WHERE courseid = %s"

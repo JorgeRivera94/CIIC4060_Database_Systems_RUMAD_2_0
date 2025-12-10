@@ -4,17 +4,19 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from typing import List, Dict, Any, Optional
+import re
 
 _model = SentenceTransformer("all-mpnet-base-v2")
 
 class ChatOllamaBot:
-    def __init__(self, encoder: Optional[SentenceTransformer] = None):
-        self.model = encoder or _model
+    def __init__(self, model: Optional[SentenceTransformer] = None):
+        self.model = model or _model
+        self.syllabus_dao = SyllabusDAO()
 
         self.prompt = PromptTemplate(
-            template="""You are an assistant for question-answering tasks.
-                Use the following documents and the conversation history to answer the question.
-                If you don't know the answer, just say that you don't know.
+            template="""You are an assistant for question-answering tasks. \n
+                Use the following documents and the conversation history to answer the question. \n
+                If you don't know the answer, just say that you don't know. \n
                 Use ten sentences maximum and keep the answer concise. \n
                 Conversation history: {history} \n
                 Documents: {documents} \n
@@ -30,13 +32,36 @@ class ChatOllamaBot:
 
         self.rag_chain = self.prompt | self.llm | StrOutputParser()
 
-    def _retrieve_context(self, emb) -> List[str]:
-        dao = SyllabusDAO()
-        fragments = dao.get_fragments(str(emb.tolist()))
+    # Check if cname and ccode are in the question
+    def _extract_course_from_question(self, question: str) -> tuple[Optional[str], Optional[str]]:
+        m = re.search(r"\b([A-Za-z]{4})\s*-?\s*(\d{4})\b", question)
+        if not m:
+            return None, None
+        cname = m.group(1).upper()
+        ccode = m.group(2)
+        return cname, ccode
+
+    def _retrieve_context(self, emb, question: str) -> List[str]:
+        # dao = SyllabusDAO()
+        # fragments = dao.get_fragments(str(emb.tolist()))
+        # context: List[str] = []
+        # for f in fragments:
+        #     if len(f) > 2 and f[3] is not None:
+        #         context.append(f[3])
+        # return context
+
+        embedding_text = str(emb.tolist())
+        cname, ccode = self._extract_course_from_question(question)
+
+        if cname and ccode:
+            fragments = self.syllabus_dao.get_fragments_by_cname_ccode(embedding_text, cname, ccode)
+        else:
+            fragments = self.syllabus_dao.get_fragments(embedding_text)
+
         context: List[str] = []
         for f in fragments:
-            if len(f) > 2 and f[3] is not None:
-                context.append(f[3])
+            if len(f) > 3 and f[3] is not None:
+                context.append(str(f[3]))
         return context
 
     def _format_history(
@@ -78,7 +103,7 @@ class ChatOllamaBot:
         # Embed question for retreival
         emb = self.model.encode(question)
 
-        context = self._retrieve_context(emb)
+        context = self._retrieve_context(emb, question)
         documents = "\n".join(context) if context else "No relevant documents found."
         history_str = self._format_history(history)
 
