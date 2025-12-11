@@ -4,7 +4,7 @@ requirements.txt is for Heroku to set up. \
 dev-requirements.txt contains the requirements to run the streamlit app locally.
 
 For this, download Ollama in https://ollama.com/ \
-Then pull llama3.2 by inputing in your terminal: \
+Then pull llama3.2 by inputing in your terminal: 
 
 ollama pull llama3.2
 
@@ -24,10 +24,10 @@ Password: pf62c4799770f5b46bb61127026d2ffb543bf759a1221e6f9cb86b2dc0dde73b2 \
 URL: postgres://u7ve47tk2bll2p:pf62c4799770f5b46bb61127026d2ffb543bf759a1221e6f9cb86b2dc0dde73b2@c57oa7dm3pc281.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dfcsar0vfdptop
 
 # To run
-python filehandler.py \
+python filehandler.py 
 
 In a terminal A so the route /chat is active: \
-python main.py \
+python main.py 
 
 In a terminal B to run the streamlit app: \
 streamlit run .\frontend\01_Log_in.py
