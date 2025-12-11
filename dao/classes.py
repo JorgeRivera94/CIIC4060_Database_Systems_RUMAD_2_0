@@ -33,6 +33,15 @@ class ClassDAO:
             return result[0]
         return result
 
+    def get_all_cdesc(self):
+        cursor = self.conn.cursor()
+        query = "SELECT cdesc FROM class"
+        cursor.execute(query)
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
     def insert_class(self, cname, ccode, cdesc, term, years, cred, csyllabus):
         cursor = self.conn.cursor()
         query = "INSERT INTO class (cname, ccode, cdesc, term, years, cred, csyllabus) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING cid"
