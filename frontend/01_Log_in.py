@@ -46,6 +46,13 @@ def logout_page():
             st.session_state.name = None
         if "messages" in st.session_state:
             st.session_state.messages = []
+        history_for_call = []
+        prompt = None
+        response = None
+        data = None
+        answer = None
+        message_placeholder = None
+        full_response = None
 
         st.success("Successfully logged out")
         st.rerun()
