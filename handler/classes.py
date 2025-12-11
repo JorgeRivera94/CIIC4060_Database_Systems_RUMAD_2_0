@@ -37,6 +37,13 @@ class ClassHandler:
         else:
             return jsonify(self.map_class(c)), 200
 
+    # GET
+    def get_all_cdesc(self):
+        dao = ClassDAO()
+        rows = dao.get_all_cdesc()
+        cdescs = [row[0] for row in rows if row and row[0]]
+        return jsonify(cdescs), 200
+
     # POST
     def insert_class(self, class_json):
         dao = ClassDAO()

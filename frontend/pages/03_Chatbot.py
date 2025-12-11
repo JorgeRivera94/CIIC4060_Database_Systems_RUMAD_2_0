@@ -4,8 +4,7 @@ import streamlit as st
 import time
 import requests
 
-# MAKE SURE TO RUN MAIN LOCALLY BEFORE
-# API_BASE = "http://127.0.0.1:5000/Fulcrum/api"
+# MAKE SURE TO RUN MAIN.PY LOCALLY BEFORE
 API_BASE = st.secrets["api"]["local_url"]
 
 st.title("RUMAD 2.0")

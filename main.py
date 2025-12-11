@@ -7,6 +7,7 @@ from handler.rooms import RoomHandler
 from handler.sections import SectionHandler
 from handler.statistics import StatisticHandler
 from handler.auth import AuthHandler
+from handler.syllabuses import SyllabusHandler
 import os
 from llm.chatollama import ChatOllamaBot
 import traceback
@@ -37,6 +38,13 @@ def get_class_by_id(cid):
         return ClassHandler().update_class_by_id(cid, request.json)
     elif request.method == "DELETE":
         return ClassHandler().delete_class_by_id(cid)
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/classes/cdesc', methods=["GET"])
+def get_all_cdesc():
+    if request.method == "GET":
+        return ClassHandler().get_all_cdesc()
     else:
         return jsonify("Method Not Supported"), 405
 
@@ -188,6 +196,27 @@ def chat():
             return jsonify(error="Internal Server Error", details=str(e)), 500
 
         return jsonify({"answer": answer}), 200
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/syllabus/fragments', methods=["POST"])
+def get_syllabus_fragments():
+    if request.method == "POST":
+        return SyllabusHandler().get_fragments(request.json or {})
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/syllabus/fragments-by-code', methods=["POST"])
+def get_syllabus_fragments_by_code():
+    if request.method == "POST":
+        return SyllabusHandler().get_fragments_by_cname_ccode(request.json or {})
+    else:
+        return jsonify("Method Not Supported"), 405
+
+@app.route('/Fulcrum/api/syllabus/fragments-by-cdesc', methods=["POST"])
+def get_syllabus_fragments_by_cdesc():
+    if request.method == "POST":
+        return SyllabusHandler().get_fragments_by_cdesc(request.json or {})
     else:
         return jsonify("Method Not Supported"), 405
 

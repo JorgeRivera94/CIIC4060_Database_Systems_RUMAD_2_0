@@ -1,22 +1,23 @@
-from dao.syllabuses import SyllabusDAO
-from dao.classes import ClassDAO
+# from dao.syllabuses import SyllabusDAO
+# from dao.classes import ClassDAO
 from sentence_transformers import SentenceTransformer
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from typing import List, Dict, Any, Optional
 import re
+from llm.remote_clients import RemoteSyllabusClient, RemoteClassClient
 
 _model = SentenceTransformer("all-mpnet-base-v2")
 
 class ChatOllamaBot:
     def __init__(self, model: Optional[SentenceTransformer] = None):
         self.model = model or _model
-        self.syllabus_dao = SyllabusDAO()
-        self.class_dao = ClassDAO()
+        self.syllabus_client = RemoteSyllabusClient()
+        self.class_client = RemoteClassClient()
 
         # Get all cdesc
-        raw_cdescs = self.class_dao.get_all_cdesc()
+        raw_cdescs = self.class_client.get_all_cdesc()
         # Flatten and dedupe
         self.cdesc_list: List[str] = sorted({row[0] for row in raw_cdescs if row and row[0]})
         self.cdesc_lower_map = {c.lower(): c for c in self.cdesc_list}
@@ -91,18 +92,19 @@ class ChatOllamaBot:
         cname, ccode = self._extract_course_from_question(question)
 
         if cname and ccode:
-            fragments = self.syllabus_dao.get_fragments_by_cname_ccode(embedding_text, cname, ccode)
+            fragments = self.syllabus_client.get_fragments_by_cname_ccode(embedding_text, cname, ccode)
         else:
             cdesc = self._extract_cdesc_from_question(question)
             if cdesc:
-                fragments = self.syllabus_dao.get_fragments_by_cdesc(embedding_text, cdesc)
+                fragments = self.syllabus_client.get_fragments_by_cdesc(embedding_text, cdesc)
             else:
-                fragments = self.syllabus_dao.get_fragments(embedding_text)
+                fragments = self.syllabus_client.get_fragments(embedding_text)
 
         context: List[str] = []
         for f in fragments:
-            if len(f) > 3 and f[3] is not None:
-                context.append(self._clean_chunk(str(f[3])))
+            chunk = f.get("chunk")
+            if chunk:
+                context.append(self._clean_chunk(str(chunk)))
         return context
 
     def _format_history(
